@@ -2,15 +2,17 @@
   "name": "kodlinc",
   "displayName": "kodlinc",
   "description": "An extension for converting code snippets to links.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "github.com/eaabak",
   "publisher": "kodlinc",
   "engines": {
     "vscode": "^1.87.0"
   },
   "categories": [
-    "Other"
+    "Other",
+    "Snippets"
   ],
+  "icon": "kodlincMarket.png",
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
