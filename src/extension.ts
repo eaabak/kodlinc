@@ -1,8 +1,8 @@
 import axios from "axios";
 import * as vscode from "vscode";
 
-const BASE_URL = "http://localhost:3000/link/";
-const API_URL = "https://kodlinc.metafron.com/addData";
+const BASE_URL = "https://kodlinc.metafron.com/link/";
+const API_URL = "https://kodlinc-api.metafron.com/addData";
 
 function getBase64Encoding(text: string): string {
   return Buffer?.from(text).toString("base64");

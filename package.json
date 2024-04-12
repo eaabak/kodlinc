@@ -4,6 +4,7 @@
   "description": "An extension for converting code snippets to links.",
   "version": "0.0.1",
   "author": "github.com/eaabak",
+  "publisher": "kodlinc",
   "engines": {
     "vscode": "^1.87.0"
   },
