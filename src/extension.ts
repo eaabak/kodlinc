@@ -13,35 +13,20 @@ async function transmitEncodedData(base64Encoded: string) {
   return response.data.uuid;
 }
 
-function getActiveEditorAndFileExtension(): {
-  editor?: vscode.TextEditor;
-  fileExtension?: string;
-} {
-  const editor = vscode.window.activeTextEditor;
-
-  if (!editor) {
-    return {};
-  }
-
-  const fileUri = editor.document.uri;
-  const fileExtension = fileUri.fsPath.split(".").pop();
-  return { editor, fileExtension };
-}
-
 export function activate(context: vscode.ExtensionContext) {
   const disposable = vscode.commands.registerCommand(
     "extension.kodlinc",
     async () => {
-      const { editor, fileExtension } = getActiveEditorAndFileExtension();
-      if (!editor) {
-        return;
-      }
+      const editor = vscode.window.activeTextEditor;
 
+      if (!editor) {
+        return {};
+      }
+  
       const selection = editor.document.getText(editor.selection);
       const base64Encoded = getBase64Encoding(selection);
       const uuid = await transmitEncodedData(base64Encoded);
-      const languageId = editor.document.languageId;
-      const url = `${BASE_URL}${uuid}?fileExtension=${fileExtension}/${languageId}`;
+      const url = `${BASE_URL}${uuid}`;
 
       let openLink = "Open Link";
       vscode.window

@@ -38,26 +38,16 @@ async function transmitEncodedData(base64Encoded) {
     const response = await axios_1.default.post(API_URL, { base64String: base64Encoded });
     return response.data.uuid;
 }
-function getActiveEditorAndFileExtension() {
-    const editor = vscode.window.activeTextEditor;
-    if (!editor) {
-        return {};
-    }
-    const fileUri = editor.document.uri;
-    const fileExtension = fileUri.fsPath.split(".").pop();
-    return { editor, fileExtension };
-}
 function activate(context) {
     const disposable = vscode.commands.registerCommand("extension.kodlinc", async () => {
-        const { editor, fileExtension } = getActiveEditorAndFileExtension();
+        const editor = vscode.window.activeTextEditor;
         if (!editor) {
-            return;
+            return {};
         }
         const selection = editor.document.getText(editor.selection);
         const base64Encoded = getBase64Encoding(selection);
         const uuid = await transmitEncodedData(base64Encoded);
-        const languageId = editor.document.languageId;
-        const url = `${BASE_URL}${uuid}?fileExtension=${fileExtension}/${languageId}`;
+        const url = `${BASE_URL}${uuid}`;
         let openLink = "Open Link";
         vscode.window
             .showInformationMessage("The selected code fragment is copied. If you want to open it from the link, please click Open Link", openLink)
