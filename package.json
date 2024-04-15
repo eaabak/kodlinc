@@ -10,7 +10,7 @@
   },
   "publisher": "kodlinc",
   "engines": {
-    "vscode": ">=1.35.0"
+    "vscode": "^1.87.0"
 },
   "categories": [
     "Other",
