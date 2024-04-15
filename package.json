@@ -21,6 +21,14 @@
         "command": "extension.kodlinc",
         "title": "Kodlinc"
       }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.kodlinc",
+        "key": "ctrl+k ctrl+l",
+        "mac": "cmd+k cmd+l",
+        "when": "editorTextFocus"
+      }
     ]
   },
   "scripts": {

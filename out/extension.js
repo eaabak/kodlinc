@@ -29,7 +29,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.deactivate = exports.activate = void 0;
 const axios_1 = __importDefault(require("axios"));
 const vscode = __importStar(require("vscode"));
-const BASE_URL = "https://kodlinc.metafron.com/link/";
+const BASE_URL = "http://localhost:3000/link/";
 const API_URL = "https://kodlinc-api.metafron.com/addData";
 function getBase64Encoding(text) {
     return Buffer?.from(text).toString("base64");
