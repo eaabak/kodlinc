@@ -2,7 +2,7 @@
   "name": "kodlinc",
   "displayName": "kodlinc",
   "description": "An extension for converting code snippets to links.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "github.com/eaabak",
   "publisher": "kodlinc",
   "engines": {
