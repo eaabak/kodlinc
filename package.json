@@ -4,6 +4,10 @@
   "description": "An extension for converting code snippets to links.",
   "version": "0.0.3",
   "author": "github.com/eaabak",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eaabak/kodlinc"
+  },
   "publisher": "kodlinc",
   "engines": {
     "vscode": "^1.87.0"
