@@ -22,8 +22,13 @@ export function activate(context: vscode.ExtensionContext) {
       if (!editor) {
         return {};
       }
-  
+
       const selection = editor.document.getText(editor.selection);
+
+      if (selection.length === 0) {
+        vscode.window.showWarningMessage("Nothing is selected.");
+        return;
+      }
       const base64Encoded = getBase64Encoding(selection);
       const uuid = await transmitEncodedData(base64Encoded);
       const url = `${BASE_URL}${uuid}`;

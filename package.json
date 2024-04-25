@@ -2,8 +2,8 @@
   "name": "kodlinc",
   "displayName": "kodlinc",
   "description": "An extension for converting code snippets to links.",
-  "version": "0.0.8",
-  "author": "github.com/eaabak",
+  "version": "0.0.9",
+  "author": "Erkin Alan",
   "repository": {
     "type": "git",
     "url": "https://github.com/eaabak/kodlinc"
